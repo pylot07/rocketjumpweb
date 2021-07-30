@@ -37,7 +37,25 @@
         }
 
         main {
+            padding: 1em;
             padding-top: 2em;
+        }
+
+        a:link {
+            color: white;
+            font-weight: bold;
+        }
+
+        a:visited {
+            color:gray;
+        }
+
+        a:hover {
+            color: white;
+        }
+
+        a:active {
+            color: white;
         }
 
         p {
@@ -49,18 +67,30 @@
             max-height: 100%;
         }
 
+        .blue{
+            color:hsl(200, 80%, 50%)
+        }
+
+        .red{
+            color:hsl(0, 70%, 70%)
+        }
+
         .topimg {
             height: 400px;
             display: flex;
             justify-content: center;
         }
+
+        #logo{
+            height: 3em;
+        }
     </style>
 </head>
 
 <body>
-    <h1 class="title">
-        rocket jumping for dummies
-    </h1>
+    <nav class="title">
+        <img src="./images/Group 32.png" alt="" id="logo">
+    </nav>
     <main class="container">
         <section>
 
@@ -110,7 +140,7 @@
                 A rocket jump is any jump assisted by the explosive knockback of the Soldier's own rockets.
                 A player can propel himself to great heights and distances, usually at the cost of some health.
                 This technique is often used to reach unusual locations on the map, cover ground quickly, bypass barriers, and surprise foes.
-                To assist with rocket jumps, the Soldier has a 40% damage resistance against any rocket he fires that hurts him while he is in the air. 
+                To assist with rocket jumps, the Soldier has a <span class="blue">40% damage resistance</span> against any rocket he fires that hurts him while he is in the air. 
                 This resistance will take effect even if an enemy was hit with the same rocket used to rocket jump, unlike the Gunboats.
                 Critical hits do not deal extra self-damage or extra knockback to the Soldier, so they will not propel him further.
                 Any rocket jumping Soldier will display burning, smoky boots until he lands, similar to the Demoman.
@@ -134,7 +164,8 @@
         <section>
             <h2>Market gardening</h2>
             <p>
-                The <a href="https://wiki.teamfortress.com/wiki/Market_Gardener">Market Gardener</a> will deal lethal critical hits (195 damage) when the user is rocket jumping. Landing one of these can sometimes
+                The <a href="https://wiki.teamfortress.com/wiki/Market_Gardener">Market Gardener</a> 
+                will deal lethal critical hits <span class="red">(195 damage</span>) when the user is rocket jumping. Landing one of these can sometimes
                 lead to a very impressive and satisfactory kill. Enemy rockets, grenades, and stickies count as an explosive jump if the player is not
                 killed by the explosion. Experienced players can sometimes use this to land critical hits against enemies. Players can also bunnyhop on the
                 ground very precisely before hitting someone to gain a critical hit.
