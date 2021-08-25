@@ -6,32 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> rktjump </title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+
     <style>
         html,
         body {
-            background-color: rgb(0, 0, 0);
+            background-color: #000a14;
             padding: 0;
             margin: 0;
+            /* font-family: 'Questrial', sans-serif; */
             font-family: sans-serif;
             font-size: 18px;
-            color: white;
+            letter-spacing: 0.025em;
+            color: rgb(255, 255, 255);
             position: relative;
+            scroll-behavior: smooth;
+        }
+
+        body{
+            display: grid;
+            grid-template-columns: 1fr 6fr 1fr;
         }
 
         .title {
-            background-image: linear-gradient(45deg,
+            /* background-image: linear-gradient(45deg,
                     hsl(200, 60%, 50%),
                     hsl(200, 60%, 50%),
                     hsl(0, 60%, 50%),
-                    hsl(0, 60%, 50%));
+                    hsl(0, 60%, 50%)); */
+
+            /* background-image: linear-gradient(rgba(0, 0, 0, 0.7) 60%, rgba(0, 0, 0, 0)); */
+            background: rgba(0, 0, 0, 0);
 
             padding: 0.5em 1em;
             margin: 0;
 
 
-            text-align: center;
-            position: sticky;
+            /* text-align: center; */
+            position: relative;
             top: 0;
+        }
+
+        .title .nav-link {
+            color: white;
+            text-decoration: none;
+            font-family: 'Questrial', sans-serif;
+            font-weight: 100;
         }
 
         .container {
@@ -50,7 +72,7 @@
         }
 
         a:visited {
-            color:gray;
+            color: gray;
         }
 
         a:hover {
@@ -70,29 +92,80 @@
             max-height: 100%;
         }
 
-        .blue{
-            color:hsl(200, 80%, 50%)
+        .blue {
+            color: hsl(200, 80%, 50%)
         }
 
-        .red{
-            color:hsl(0, 70%, 70%)
+        .red {
+            color: hsl(0, 70%, 70%)
         }
 
-        .topimg {
-            height: 400px;
+        .player {
+            /* aspect-ratio: 16/9; */
+            width: 100%;
             display: flex;
             justify-content: center;
         }
 
-        #logo{
+        #logo {
             height: 3em;
+            margin-top: 1em;
+        }
+
+        .spacer {
+            aspect-ratio: 960/540;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 0;
+            overflow: visible;
+        }
+
+        .layer1 {
+            background-image: url("images/layered-waves-haikei.svg");
+        }
+
+
+        .waves {
+            background: url(/images/layered-waves-haikei.svg) no-repeat;
+            background-size: 100% auto;
+        }
+
+        .sidebar{
+            display: grid;
+            place-items: start;
+            gap: 1em;
+            position: sticky;
+            top: 0;
         }
     </style>
+
+    <link rel="shortcut icon" type="image/x-icon" href="images/Group 26.png">
+
+
 </head>
 
-<body>
+<body class="waves">
     <header class="title">
-        <img src="./images/Group 32.png" alt="" id="logo">
+        <div class="sidebar">
+            <a href="#">
+                <img src="./images/Group 32.png" alt="" id="logo">
+            </a>
+            <a class="nav-link" href="#Basic">
+                Basic
+            </a>
+            <a class="nav-link" href="#Adv">
+                Advanced
+            </a>
+            <a class="nav-link" href="#Misc">
+                Misc
+            </a>
+            <a class="nav-link" href="./sticky.html">
+                Sticky
+            </a>
+
+        </div>
     </header>
     <main class="container">
         <section>
@@ -100,79 +173,182 @@
             <audio src="./soldier-1609802886291.wav"></audio>
 
             <h2>Rocket Jumping for Dummies</h2>
-            <div class="topimg">
+            <!-- <div class="topimg">
                 <img src="./images/Group 26.png" alt="soldier">
-            </div>
+            </div> -->
+            <iframe class="player" width="560" height="315" src="https://www.youtube.com/embed/Fpvt3raAK2Y"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
             <p>
-                
-            </p>
-        </section>
-
-        <hr>
-
-        <section>
-            <h2>Crouch-jumping</h2>
-            <p>
-                At any point during a jump, the player can crouch by pressing the pre-assigned button. This will cause the classes to bring their
-                legs up in world view and move an additional Hammer unit up, as well as reduce their height by 27 Hammer units from the bottom of
-                their hitbox. This allows them to reach higher surfaces or shrink their hitboxes to dodge enemy fire. By default, a player may only
-                crouch and uncrouch twice while in the air to prevent several exploits.
-
-                Crouch-jumping is also used to boost the effect of explosive knockback. By design, any jump involving an explosive will go farther
-                with a crouch-jump than a regular jump.
-            </p>
-        </section>
-
-        <hr>
-
-        <section>
-            <h2>Air strafing</h2>
-            <p>
-                Air strafing allows players to curve in mid-air to change their trajectory. While airborne, it can be performed by simultaneously strafing
-                and turning smoothly in the same direction. Attempting to move forward with the movement keys (such as holding W) during the maneuver will
-                prevent the player from strafing, while attempting to move backward will also result in a decrease of speed.
 
             </p>
         </section>
 
         <hr>
 
-        <section>
-            <h2>What is a "rocket jump?"</h2>
-            <p>
-                A rocket jump is any jump assisted by the explosive knockback of the Soldier's own rockets.
-                A player can propel himself to great heights and distances, usually at the cost of some health.
-                This technique is often used to reach unusual locations on the map, cover ground quickly, bypass barriers, and surprise foes.
-                To assist with rocket jumps, the Soldier has a <span class="blue">40% damage resistance</span> against any rocket he fires that hurts him while he is in the air. 
-                This resistance will take effect even if an enemy was hit with the same rocket used to rocket jump, unlike the <a href="https://wiki.teamfortress.com/wiki/Gunboats">Gunboats</a>.
-                Critical hits do not deal extra self-damage or extra knockback to the Soldier, so they will not propel him further.
-                Any rocket jumping Soldier will display burning, smoky boots until he lands, similar to the Demoman.
+        <section id="Basic">
+            <article>
+                <h2>What is a "rocket jump?"</h2>
+                <p>
+                    A rocket jump is any jump assisted by the explosive knockback of the Soldier's own rockets.
+                    A player can propel himself to great heights and distances, usually at the cost of some health.
+                    This technique is often used to reach unusual locations on the map, cover ground quickly, bypass
+                    barriers, and surprise foes.
+                    To assist with rocket jumps, the Soldier has a <span class="blue">40% damage resistance</span>
+                    against
+                    any rocket he fires that hurts him while he is in the air.
+                    This resistance will take effect even if an enemy was hit with the same rocket used to rocket jump,
+                    unlike the <a href="https://wiki.teamfortress.com/wiki/Gunboats">Gunboats</a>.
+                    Critical hits do not deal extra self-damage or extra knockback to the Soldier, so they will not
+                    propel
+                    him further.
+                    Any rocket jumping Soldier will display burning, smoky boots until he lands, similar to the Demoman.
+                </p>
+            </article>
+            <article>
+                <h2>Standard Rocket Jump</h2>
+                <p>
+                    To execute a rocket jump, simultaneously jump and fire a rocket at the ground below. The angle of
+                    the
+                    shot and distance from the
+                    explosion will determine the velocity and height of the jump. Crouch-jumping before firing the
+                    rocket
+                    will launch the player
+                    significantly farther. The sooner the explosion is made after jumping, the farther and faster the
+                    Soldier will fly.
+                </p>
+            </article>
+            <article>
+                <h2>Crouch-jumping</h2>
+                <p>
+                    At any point during a jump, the player can crouch by pressing the pre-assigned button. This will
+                    cause
+                    the classes to bring their
+                    legs up in world view and move an additional Hammer unit up, as well as reduce their height by 27
+                    Hammer
+                    units from the bottom of
+                    their hitbox. This allows them to reach higher surfaces or shrink their hitboxes to dodge enemy
+                    fire. By
+                    default, a player may only
+                    crouch and uncrouch twice while in the air to prevent several exploits.
+                    Crouch-jumping is also used to boost the effect of explosive knockback. By design, any jump
+                    involving an
+                    explosive will go farther
+                    with a crouch-jump than a regular jump.
+                </p>
+            </article>
+            <article>
+                <h2>Air strafing</h2>
+                <p>
+                    Air strafing allows players to curve in mid-air to change their trajectory. While airborne, it can
+                    be
+                    performed by simultaneously strafing
+                    and turning smoothly in the same direction. Attempting to move forward with the movement keys (such
+                    as
+                    holding W) during the maneuver will
+                    prevent the player from strafing, while attempting to move backward will also result in a decrease
+                    of
+                    speed.
+                </p>
+            </article>
+            <article>
+                <h2>Pogo</h2>
+                <p>
+                    A pogo is a technique of continuously firing rockets at your feet to prevent you from touching the
+                    ground.
+                    If used correctly, it can create a lot of speed to transport the player very quickly.
+                </p>
 
-            </p>
+                <p>
+                    A standard pogo is easy to learn and not neccesarily difficult to master. You usually begin with
+                    falling off
+                    a small platform (or by pressing jump and then holding fire). Before hitting the floor, you press
+                    and hold fire
+                    and crouch whilst looking down. In any type of pogo, never let go of fire and crouch. While you
+                    bounce up and down
+                    by your rockets, you use the keys W, A, S, and D to keep your balance. A + D balance and steer you
+                    while W + S function
+                    as a brake when you go too fast in either direction (use W when you go backwards too much and S when
+                    you go too fast ahead).
+                    When you attempt a pogo for the first time, try to pogo in the same area about 10-15 times. Once you
+                    can do that balanced
+                    and under control, you are ready for a pogo that actually gets you somewhere. Now instead of looking
+                    down, you occasionally
+                    shoot a little more behind you so you begin moving forward. Whilst doing so, keep the control and
+                    balance with the WASD keys.
+                    First just slowly move ahead until you reach the other end on which you can stand again. Also try to
+                    change direction with the
+                    A + D keys.
+                </p>
+            </article>
+            <article>
+                <h2>Wall Jumps</h2>
+            </article>
+            <article>
+                <h2>Water Jumps</h2>
+            </article>
         </section>
 
         <hr>
 
-        <section>
-            <h2>Basic rocket jump</h2>
-            <p>
-                To execute a rocket jump, simultaneously jump and fire a rocket at the ground below. The angle of the shot and distance from the
-                explosion will determine the velocity and height of the jump. Crouch-jumping before firing the rocket will launch the player
-                significantly farther. The sooner the explosion is made after jumping, the farther and faster the Soldier will fly.
-            </p>
+        <section id="Adv">
+            <article>
+                <h2>Market gardening</h2>
+                <p>
+                    The <a href="https://wiki.teamfortress.com/wiki/Market_Gardener">Market Gardener</a>
+                    will deal lethal critical hits <span class="red">(195 damage)</span> when the user is rocket
+                    jumping.
+                    Landing one of these can sometimes
+                    lead to a very impressive and satisfactory kill. Enemy rockets, grenades, and stickies count as an
+                    explosive jump if the player is not
+                    killed by the explosion. Experienced players can sometimes use this to land critical hits against
+                    enemies. Players can also bunnyhop on the
+                    ground very precisely before hitting someone to gain a critical hit.
+                </p>
+            </article>
+            <article>
+                <h2>Speedshot</h2>
+            </article>
+            <article>
+                <h2>Speed Pogo</h2>
+                <p>
+                    Once you got the standard pogo down, it is time to learn the speedpogo. A speedpogo, hence the name,
+                    is a pogo with speed.
+                    This can be started in 3 ways: fall from a platform to pogo, spacebar jump up into pogo or by a low
+                    wall rocketjump.
+                    Speedpogo barely differs from a standard pogo. The only difference is that the faster you go, the
+                    more you have to aim ahead of you on the ground.
+                    Just as with walljumping, there also is a limit of how fast you can go until the rockets cannot
+                    catch up with you anymore, so don't be too much of
+                    a speed maniac and tap S when you think you're going a little too fast. You either start from a
+                    normal pogo or via a low wall rocketjump.
+                    From a normal pogo, occasionally fire a bit more behind you until speed builds up. Always focus on
+                    control and balance.
+                    Once speed is building up, gradually shoot more and more ahead of you so your rockets catch up with
+                    you and tap S when necessary.
+                </p>
+            </article>
+            <article>
+                <h2>Sync Jumps</h2>
+            </article>
+            <article>
+                <h2>Surf (Jurf)</h2>
+            </article>
         </section>
 
         <hr>
 
-        <section>
-            <h2>Market gardening</h2>
-            <p>
-                The <a href="https://wiki.teamfortress.com/wiki/Market_Gardener">Market Gardener</a> 
-                will deal lethal critical hits <span class="red">(195 damage)</span> when the user is rocket jumping. Landing one of these can sometimes
-                lead to a very impressive and satisfactory kill. Enemy rockets, grenades, and stickies count as an explosive jump if the player is not
-                killed by the explosion. Experienced players can sometimes use this to land critical hits against enemies. Players can also bunnyhop on the
-                ground very precisely before hitting someone to gain a critical hit.
-            </p>
+        <section id="Misc">
+            <article>
+                <h2>C-Tap</h2>
+            </article>
+            <article>
+                <h2>Edgebug</h2>
+            </article>
+            <article>
+                <h2>Wallbug</h2>
+            </article>
         </section>
     </main>
 </body>
